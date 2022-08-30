@@ -1,0 +1,48 @@
+.user {
+    width: 50%;
+    height: 180px;
+    font-size: 16px;
+    display: flex;
+    justify-content: stretch;
+    padding: 15px;
+    color: #223636;
+    font-weight: bold;
+    margin: 20px auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: relative;
+}
+
+.users-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-left: 15%;
+}
+
+.user-photo {
+    width:33%;
+    object-fit: cover;
+    border: 1px solid #03BFCB;
+    border-radius: 50%;
+    padding: 7px;
+}
+.user-name {
+    margin: 5px;
+}
+
+.user-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 75%;
+    font-size: 1.2em;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+.icon {
+    color: #223636;
+
+}
+
