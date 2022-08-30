@@ -1,6 +1,7 @@
 import {ADD_USER, GET_USERS} from './types';
+
 const initialState = {
-    users : null
+    users: null
 };
 
 export function userReducer(state = initialState, action) {
@@ -11,7 +12,7 @@ export function userReducer(state = initialState, action) {
             return {...state, users: payload.users}
         }
         case ADD_USER: {
-            const users = state.users? [...state.users, payload.newUser] :[payload.user]
+            const users = state.users ? [...state.users, payload.newUser] : [payload.user]
             return {...state, users}
         }
         default:

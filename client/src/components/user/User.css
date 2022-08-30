@@ -1,10 +1,10 @@
 .user {
     width: 50%;
-    height: 180px;
+    height: 175px;
     font-size: 16px;
     display: flex;
     justify-content: stretch;
-    padding: 15px;
+    padding: 10px;
     color: #223636;
     font-weight: bold;
     margin: 20px auto;
@@ -21,12 +21,13 @@
 }
 
 .user-photo {
-    width:33%;
+    width: 30%;
     object-fit: cover;
-    border: 1px solid #03BFCB;
+    border: 1px solid darkgray;
     border-radius: 50%;
     padding: 7px;
 }
+
 .user-name {
     margin: 5px;
 }
@@ -41,8 +42,8 @@
     top: 10%;
     right: 5%;
 }
+
 .icon {
     color: #223636;
-
 }
 

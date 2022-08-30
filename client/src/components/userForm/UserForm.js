@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addUserAction, updateUserAction} from "../../redux/actions";
 import {useEffect, useRef, useState} from "react";
 import {useLocation} from "react-router";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {usersSelector} from "../../redux/userReducer";
 import {validateText, validateURLText} from "../../services/validationService";
 
@@ -22,21 +22,19 @@ export function UserForm({title}) {
         nickname: validateText(nickname),
         avatar: validateURLText(avatar)
     });
-    const [btnDisabled, setBtnDisabled] = useState(true)
+    const [btnDisabled, setBtnDisabled] = useState(true);
     const inputAvatar = useRef(null);
-    const navigate  = useNavigate();
-
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     useEffect(() => {
         const {name, nickname, avatar} = validForm;
-        name && nickname && avatar ? setBtnDisabled(false) : setBtnDisabled(true)
-    }, [validForm])
-
+        name && nickname && avatar ? setBtnDisabled(false) : setBtnDisabled(true);
+    }, [validForm]);
 
     const handleChangeData = (event) => {
         const {target, target: {name, value}} = event;
         switch (name) {
             case 'name':
-                console.log({value})
                 validateInputText(value, target);
                 setName(value);
                 break;
@@ -45,14 +43,14 @@ export function UserForm({title}) {
                 setNickname(value);
                 break;
             case 'avatar':
-                validateAvatar(value, target)
-                setAvatar(value)
+                validateAvatar(value, target);
+                setAvatar(value);
                 break;
         }
     }
 
     const validateInputText = (text, target) => {
-        const textIsValid = validateText(text)
+        const textIsValid = validateText(text);
         !textIsValid ? target.style.borderColor = 'red' : target.style.borderColor = 'gray';
         setValidForm((prevState) => ({...prevState, [target.name]: textIsValid}));
     }
@@ -61,7 +59,7 @@ export function UserForm({title}) {
         const textIsValid = validateURLText(text);
         if (!textIsValid) {
             target.style.borderColor = 'red';
-            target.setAttribute('data-valid', false)
+            target.setAttribute('data-valid', false);
         } else {
             target.style.borderColor = 'gray';
         }
@@ -74,12 +72,8 @@ export function UserForm({title}) {
             avatar
         }
         isEditingForm ? dispatch(updateUserAction(id, user)) : dispatch(addUserAction(user));
-        navigate('/users', { replace: true })
-
-
+        navigate('/users', {replace: true});
     }
-
-    const dispatch = useDispatch();
 
 
     return (

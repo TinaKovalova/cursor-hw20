@@ -1,8 +1,9 @@
-.users{
+.users {
     height: fit-content;
-    width:60%;
+    width: 60%;
     margin: 0 auto;
 }
-.users ul{
+
+.users ul {
     list-style: none;
 }
