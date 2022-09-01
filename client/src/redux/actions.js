@@ -1,7 +1,7 @@
 import {ADD_USER, GET_USERS} from "./types";
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:4004';
+axios.defaults.baseURL = 'https://server-hw-cursor.herokuapp.com/';
 
 
 export const getUsersAction = () => {
