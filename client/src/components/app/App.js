@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {HashRouter as Router, Routes, Route} from "react-router-dom";
 import {Nav} from "../navigation/Nav";
 import {UserLIst} from "../usersList/UserLIst";
 import {UserForm} from "../userForm/UserForm";
